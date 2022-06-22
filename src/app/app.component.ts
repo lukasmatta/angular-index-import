@@ -1,10 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { AdService } from './ads';
+import { AdItem } from './ads';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <div>
+      <app-ad-banner [ads]="ads"></app-ad-banner>
+    </div>
+  `
 })
-export class AppComponent {
-  title = 'test';
+export class AppComponent implements OnInit {
+  ads: AdItem[] = [];
+
+  constructor(private adService: AdService) {}
+
+  ngOnInit() {
+    this.ads = this.adService.getAds();
+  }
 }
+
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/
