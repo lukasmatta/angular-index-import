@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 
-import { AdDirective } from './';
+import { AdDirective } from './ad.directive';
 import { AdItem } from './';
 import { AdComponent } from './';
 
